@@ -4,12 +4,16 @@ Pre-Requirements: Docker, Idea, Java 21
 
 1. cd [app/src/main/resources/kafka-docker](app/src/main/resources/kafka-docker) && docker-compose up
 2. start [app/src/main/java/jj10ye/App.Java](app/src/main/java/jj10ye/App.java)
-3. info o topicu `my-topic` (jedyny na start): http://localhost:8080/config/my-topic
-4. info o topicu w Kafka UI (wystartowane przez docker-compose) http://localhost:8090/ui/clusters/local/all-topics/my-topic
-5. Emisja 100 eventów: (GET) http://localhost:8080/produce-events
-6. Modyfikacja Topicu: (GET) http://localhost:8080/config/{nazwa-topicu}/set-partitions/{liczba-partycji}, np: http://localhost:8080/config/my-topic/set-partitions/2
 
-Uwagi:
+Gotowe!
+
+# Endpoints
+- info o topicu `my-topic` (jedyny na start): http://localhost:8080/config/my-topic
+- info o topicu w Kafka UI (wystartowane przez docker-compose) http://localhost:8090/ui/clusters/local/all-topics/my-topic
+- Emisja 100 eventów: (GET) http://localhost:8080/produce-events
+- Modyfikacja Topicu: (GET) http://localhost:8080/config/{nazwa-topicu}/set-partitions/{liczba-partycji}, np: http://localhost:8080/config/my-topic/set-partitions/2
+
+# Uwagi:
 
 - w [docker-compose.yaml](app/src/main/resources/kafka-docker/docker-compose.yaml) jest zdefiniowany  1 topic `my-topic` z 1 repliką i 1 partycją
 - kafka wstaje na porcie 29092
