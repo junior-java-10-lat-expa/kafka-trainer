@@ -16,7 +16,7 @@ public class KafkaProducer {
     public void send100Events(boolean diffKeys) {
         for (int i = 0; i < 100; i++) {
             LocalDateTime now = LocalDateTime.now();
-            MyEvent event = new MyEvent(diffKeys ? now.toString() : null);
+            MyEvent event = new MyEvent(diffKeys ? i + now.toString() : null);
             kafkaTemplate.send(MyEvent.TOPIC_NAME, event.getKey(), event);
             log.info("Producer produced the message {}", event);
         }

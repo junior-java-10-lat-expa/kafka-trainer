@@ -25,7 +25,7 @@ public class DummyProducerController {
     KafkaAdmin kafkaAdmin;
 
     @GetMapping("/produce-events")
-    void produce(@RequestParam("different-topic-keys") boolean differentKey) {
+    void produce(@RequestParam(value = "different-topic-keys", required = false) boolean differentKey) {
         kafkaProducer.send100Events(differentKey);
     }
 
